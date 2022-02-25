@@ -16,6 +16,8 @@ func _ready() -> void:
 	var coins = get_tree().get_nodes_in_group("Coin")
 	for coin in coins:
 		coin.connect("coin_collected", self, "_on_GUIController_coin_collected")
+		gui_controller.total_amount_coins += 1
+		gui_controller.load_total_coins()
 
 
 func _on_Player_1_player_ready() -> void:
