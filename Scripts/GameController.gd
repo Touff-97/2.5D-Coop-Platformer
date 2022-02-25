@@ -82,18 +82,11 @@ func _on_InputController_player_switch(controller: Node, other_controller: Node)
 					print(controller.name + " now controls the " + players[0].name)
 			
 			other_controller.player = null
-			
 			# Important to break after finding the active player so it doesn't switch back, achieving nothing
 			break
 
 
 # GUI Controller
-func _on_GUIController_coin_collected(coin_value: float, player: String) -> void:
+func _on_GUIController_coin_collected(coin_value: float, coin_color: Color, player: String) -> void:
 	print("Adding " + str(coin_value) + " to " + player)
-	# Add the coin's value to the pool of coins
-	gui_controller.coins_collected += coin_value
-	# Add the coin's value to the player that collected it
-	var player_coins = player.to_lower() + "_coins"
-	gui_controller.get(player_coins).text = str(float(gui_controller.get(player_coins).text) + coin_value) + "c"
-	# Add the coin's value to the last coin value collected
-	gui_controller.last_coin_value = coin_value
+	gui_controller.collect_coin(coin_value, coin_color, player)

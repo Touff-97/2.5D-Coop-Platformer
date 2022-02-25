@@ -2,7 +2,7 @@ extends Sprite3D
 
 export(float) var coin_value = 200
 
-signal coin_collected(value, player)
+signal coin_collected(value, color, player)
 
 
 func _ready() -> void:
@@ -37,5 +37,5 @@ func _on_Area_body_entered(body: Node) -> void:
 		var player = body.name
 		print("Coin collected!")
 		
-		emit_signal("coin_collected", coin_value, player)
+		emit_signal("coin_collected", coin_value, get_coin_color(), player)
 		queue_free()

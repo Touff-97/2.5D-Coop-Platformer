@@ -70,54 +70,59 @@ width = 50.0
 height = 1.0
 depth = 10.0
 
-[node name="Collectibles" type="Node" parent="LevelController"]
+[node name="Coins" type="Node" parent="LevelController"]
 
-[node name="Coin" parent="LevelController/Collectibles" instance=ExtResource( 9 )]
+[node name="Coin" parent="LevelController/Coins" instance=ExtResource( 9 )]
 transform = Transform( 0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 0.163534, 0 )
 
-[node name="Coin2" parent="LevelController/Collectibles" instance=ExtResource( 9 )]
+[node name="Coin2" parent="LevelController/Coins" instance=ExtResource( 9 )]
 transform = Transform( 0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 1.22406, 0.163534, 0 )
+coin_value = 400.0
 
-[node name="Coin3" parent="LevelController/Collectibles" instance=ExtResource( 9 )]
+[node name="Coin3" parent="LevelController/Coins" instance=ExtResource( 9 )]
 transform = Transform( 0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 2.018, 0.163534, 0 )
 
-[node name="Coin4" parent="LevelController/Collectibles" instance=ExtResource( 9 )]
+[node name="Coin4" parent="LevelController/Coins" instance=ExtResource( 9 )]
 transform = Transform( 0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 2.66755, 0.163534, 0 )
 
-[node name="Coin5" parent="LevelController/Collectibles" instance=ExtResource( 9 )]
+[node name="Coin5" parent="LevelController/Coins" instance=ExtResource( 9 )]
 transform = Transform( 0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 3.23965, 0.163534, 0 )
 
-[node name="Coin6" parent="LevelController/Collectibles" instance=ExtResource( 9 )]
+[node name="Coin6" parent="LevelController/Coins" instance=ExtResource( 9 )]
 transform = Transform( 0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, -1.2816, 0.163534, 0 )
+coin_value = 400.0
 
-[node name="Coin7" parent="LevelController/Collectibles" instance=ExtResource( 9 )]
+[node name="Coin7" parent="LevelController/Coins" instance=ExtResource( 9 )]
 transform = Transform( 0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, -2.0558, 0.163534, 0 )
 
-[node name="Coin8" parent="LevelController/Collectibles" instance=ExtResource( 9 )]
+[node name="Coin8" parent="LevelController/Coins" instance=ExtResource( 9 )]
 transform = Transform( 0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, -2.85585, 0.163534, 0 )
+coin_value = 600.0
 
-[node name="Coin9" parent="LevelController/Collectibles" instance=ExtResource( 9 )]
+[node name="Coin9" parent="LevelController/Coins" instance=ExtResource( 9 )]
 transform = Transform( 0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, -3.57243, 0.163534, 0 )
 
-[node name="Coin10" parent="LevelController/Collectibles" instance=ExtResource( 9 )]
+[node name="Coin10" parent="LevelController/Coins" instance=ExtResource( 9 )]
 transform = Transform( 0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, -4.33915, 0.163534, 0 )
+coin_value = 1000.0
 
-[node name="Coin11" parent="LevelController/Collectibles" instance=ExtResource( 9 )]
+[node name="Coin11" parent="LevelController/Coins" instance=ExtResource( 9 )]
 transform = Transform( 0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, -4.98512, 0.163534, 0 )
 
-[node name="Coin12" parent="LevelController/Collectibles" instance=ExtResource( 9 )]
+[node name="Coin12" parent="LevelController/Coins" instance=ExtResource( 9 )]
 transform = Transform( 0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, -4.64391, 0.441003, 0 )
 
-[node name="Coin13" parent="LevelController/Collectibles" instance=ExtResource( 9 )]
+[node name="Coin13" parent="LevelController/Coins" instance=ExtResource( 9 )]
 transform = Transform( 0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, -3.20907, 0.441003, 0 )
 
-[node name="Coin14" parent="LevelController/Collectibles" instance=ExtResource( 9 )]
+[node name="Coin14" parent="LevelController/Coins" instance=ExtResource( 9 )]
 transform = Transform( 0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, -1.67092, 0.441003, 0 )
 
-[node name="Coin15" parent="LevelController/Collectibles" instance=ExtResource( 9 )]
+[node name="Coin15" parent="LevelController/Coins" instance=ExtResource( 9 )]
 transform = Transform( 0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 1.65251, 0.441003, 0 )
+coin_value = 400.0
 
-[node name="Coin16" parent="LevelController/Collectibles" instance=ExtResource( 9 )]
+[node name="Coin16" parent="LevelController/Coins" instance=ExtResource( 9 )]
 transform = Transform( 0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 2.94504, 0.441003, 0 )
 
 [node name="GUIController" type="CanvasLayer" parent="."]
