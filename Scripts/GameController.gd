@@ -1,14 +1,21 @@
 extends Spatial
 
 onready var players : Array = []
+onready var gui_controller : CanvasLayer = $GUIController
 
 var max_player_count : int = 2
 
 
 func _ready() -> void:
+	# Store a reference to the players
 	for i in range(max_player_count):
 		var new_player = find_node("Player_" + str(i + 1))
 		players.append(new_player)
+	# Get nodes in groups and connect their signals
+	# Coins
+	var coins = get_tree().get_nodes_in_group("Coin")
+	for coin in coins:
+		coin.connect("coin_collected", self, "_on_GUIController_coin_collected")
 
 
 func _on_Player_1_player_ready() -> void:
@@ -50,7 +57,7 @@ func _on_InputController_player_disconnected(controller: Node) -> void:
 			break
 
 
-func _on_InputController_player_switch(controller: Node) -> void:
+func _on_InputController_player_switch(controller: Node, other_controller: Node) -> void:
 	for player in players:
 		if player.active:
 			match player.name:
@@ -73,3 +80,20 @@ func _on_InputController_player_switch(controller: Node) -> void:
 					players[0].activate()
 					players[1].deactivate()
 					print(controller.name + " now controls the " + players[0].name)
+			
+			other_controller.player = null
+			
+			# Important to break after finding the active player so it doesn't switch back, achieving nothing
+			break
+
+
+# GUI Controller
+func _on_GUIController_coin_collected(coin_value: float, player: String) -> void:
+	print("Adding " + str(coin_value) + " to " + player)
+	# Add the coin's value to the pool of coins
+	gui_controller.coins_collected += coin_value
+	# Add the coin's value to the player that collected it
+	var player_coins = player.to_lower() + "_coins"
+	gui_controller.get(player_coins).text = str(float(gui_controller.get(player_coins).text) + coin_value) + "c"
+	# Add the coin's value to the last coin value collected
+	gui_controller.last_coin_value = coin_value

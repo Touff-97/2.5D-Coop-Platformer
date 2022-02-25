@@ -13,7 +13,8 @@ radius = 0.0717341
 height = 0.138605
 
 [node name="Player_1" type="KinematicBody"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.159397, 0 )
+transform = Transform( 0.999963, 0.00499697, -0.00695691, -0.00497761, 0.999984, 0.0027987, 0.00697077, -0.00276399, 0.999972, 0, 0.159397, 0 )
+collision_layer = 2
 axis_lock_motion_z = true
 move_lock_z = true
 script = ExtResource( 1 )

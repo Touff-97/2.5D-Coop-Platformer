@@ -55,6 +55,17 @@ func get_action() -> bool:
 	return acting
 
 
+func get_save() -> bool:
+	var saving : bool
+	
+	if is_type(0):
+		saving = Input.is_action_just_pressed("controller_save_0")
+	elif is_type(1):
+		saving = Input.is_action_just_pressed("keyboard_save_0")
+	
+	return saving
+
+
 func get_switch() -> bool:
 	var switching : bool
 	

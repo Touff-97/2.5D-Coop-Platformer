@@ -27,6 +27,10 @@ func get_action() -> bool:
 	return false
 
 
+func get_save() -> bool:
+	return false
+
+
 func get_switch() -> bool:
 	return false
 

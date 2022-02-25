@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://Scripts/GameController.gd" type="Script" id=1]
 [ext_resource path="res://Scripts/Input/PlayerController1.gd" type="Script" id=2]
@@ -7,9 +7,14 @@
 [ext_resource path="res://Scenes/Player.tscn" type="PackedScene" id=5]
 [ext_resource path="res://Scripts/CameraController.gd" type="Script" id=6]
 [ext_resource path="res://Scenes/Block.tscn" type="PackedScene" id=7]
+[ext_resource path="res://Scripts/GUIController.gd" type="Script" id=8]
+[ext_resource path="res://Scenes/Collectibles/Coin.tscn" type="PackedScene" id=9]
 
 [sub_resource type="Environment" id=1]
 ambient_light_color = Color( 1, 1, 1, 1 )
+
+[sub_resource type="SpatialMaterial" id=2]
+albedo_color = Color( 0.0745098, 0.0745098, 0.0745098, 1 )
 
 [node name="GameController" type="Spatial"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0011816, 0.00827801, -0.00279784 )
@@ -35,6 +40,9 @@ fov = 50.0
 
 [node name="LevelController" type="Node" parent="."]
 
+[node name="DirectionalLight" type="DirectionalLight" parent="LevelController"]
+transform = Transform( -0.648863, 0.604972, -0.461504, -0.0362033, 0.581286, 0.812893, 0.760044, 0.544164, -0.355273, 0, 0, 0 )
+
 [node name="Player_1" parent="LevelController" instance=ExtResource( 5 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.640749, 0.159397, 0 )
 
@@ -56,12 +64,173 @@ jump_time_to_descent = 0.25
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.002, -0.51, -0.004 )
 
 [node name="Block" parent="LevelController/Floor/Block" index="1"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00194049, 0.0196207, -0.0042057 )
+material_override = SubResource( 2 )
 width = 50.0
 height = 1.0
 depth = 10.0
 
-[node name="DirectionalLight" type="DirectionalLight" parent="LevelController"]
-transform = Transform( -0.648863, 0.604972, -0.461504, -0.0362033, 0.581286, 0.812893, 0.760044, 0.544164, -0.355273, 0, 0, 0 )
+[node name="Collectibles" type="Node" parent="LevelController"]
+
+[node name="Coin" parent="LevelController/Collectibles" instance=ExtResource( 9 )]
+transform = Transform( 0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 0.163534, 0 )
+
+[node name="Coin2" parent="LevelController/Collectibles" instance=ExtResource( 9 )]
+transform = Transform( 0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 1.22406, 0.163534, 0 )
+
+[node name="Coin3" parent="LevelController/Collectibles" instance=ExtResource( 9 )]
+transform = Transform( 0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 2.018, 0.163534, 0 )
+
+[node name="Coin4" parent="LevelController/Collectibles" instance=ExtResource( 9 )]
+transform = Transform( 0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 2.66755, 0.163534, 0 )
+
+[node name="Coin5" parent="LevelController/Collectibles" instance=ExtResource( 9 )]
+transform = Transform( 0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 3.23965, 0.163534, 0 )
+
+[node name="Coin6" parent="LevelController/Collectibles" instance=ExtResource( 9 )]
+transform = Transform( 0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, -1.2816, 0.163534, 0 )
+
+[node name="Coin7" parent="LevelController/Collectibles" instance=ExtResource( 9 )]
+transform = Transform( 0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, -2.0558, 0.163534, 0 )
+
+[node name="Coin8" parent="LevelController/Collectibles" instance=ExtResource( 9 )]
+transform = Transform( 0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, -2.85585, 0.163534, 0 )
+
+[node name="Coin9" parent="LevelController/Collectibles" instance=ExtResource( 9 )]
+transform = Transform( 0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, -3.57243, 0.163534, 0 )
+
+[node name="Coin10" parent="LevelController/Collectibles" instance=ExtResource( 9 )]
+transform = Transform( 0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, -4.33915, 0.163534, 0 )
+
+[node name="Coin11" parent="LevelController/Collectibles" instance=ExtResource( 9 )]
+transform = Transform( 0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, -4.98512, 0.163534, 0 )
+
+[node name="Coin12" parent="LevelController/Collectibles" instance=ExtResource( 9 )]
+transform = Transform( 0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, -4.64391, 0.441003, 0 )
+
+[node name="Coin13" parent="LevelController/Collectibles" instance=ExtResource( 9 )]
+transform = Transform( 0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, -3.20907, 0.441003, 0 )
+
+[node name="Coin14" parent="LevelController/Collectibles" instance=ExtResource( 9 )]
+transform = Transform( 0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, -1.67092, 0.441003, 0 )
+
+[node name="Coin15" parent="LevelController/Collectibles" instance=ExtResource( 9 )]
+transform = Transform( 0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 1.65251, 0.441003, 0 )
+
+[node name="Coin16" parent="LevelController/Collectibles" instance=ExtResource( 9 )]
+transform = Transform( 0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 2.94504, 0.441003, 0 )
+
+[node name="GUIController" type="CanvasLayer" parent="."]
+script = ExtResource( 8 )
+
+[node name="Margin" type="MarginContainer" parent="GUIController"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_constants/margin_right = 10
+custom_constants/margin_top = 10
+custom_constants/margin_left = 10
+custom_constants/margin_bottom = 10
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TopGUI" type="HBoxContainer" parent="GUIController/Margin"]
+margin_left = 10.0
+margin_top = 10.0
+margin_right = 630.0
+margin_bottom = 50.0
+size_flags_vertical = 0
+
+[node name="Player_1" type="HBoxContainer" parent="GUIController/Margin/TopGUI"]
+margin_right = 101.0
+margin_bottom = 40.0
+custom_constants/separation = 10
+
+[node name="Icon" type="ColorRect" parent="GUIController/Margin/TopGUI/Player_1"]
+margin_right = 40.0
+margin_bottom = 40.0
+rect_min_size = Vector2( 40, 40 )
+color = Color( 0.333333, 0.462745, 0.815686, 1 )
+
+[node name="Stats" type="VBoxContainer" parent="GUIController/Margin/TopGUI/Player_1"]
+margin_left = 50.0
+margin_top = 3.0
+margin_right = 101.0
+margin_bottom = 37.0
+size_flags_vertical = 4
+custom_constants/separation = 5
+
+[node name="Name" type="Label" parent="GUIController/Margin/TopGUI/Player_1/Stats"]
+margin_right = 51.0
+margin_bottom = 14.0
+text = "Player 1"
+
+[node name="CoinBox" type="HBoxContainer" parent="GUIController/Margin/TopGUI/Player_1/Stats"]
+margin_top = 19.0
+margin_right = 51.0
+margin_bottom = 34.0
+custom_constants/separation = 5
+
+[node name="Icon" type="ColorRect" parent="GUIController/Margin/TopGUI/Player_1/Stats/CoinBox"]
+margin_right = 15.0
+margin_bottom = 15.0
+rect_min_size = Vector2( 15, 15 )
+color = Color( 0.937255, 0.0666667, 0.0666667, 1 )
+
+[node name="Coins" type="Label" parent="GUIController/Margin/TopGUI/Player_1/Stats/CoinBox"]
+margin_left = 20.0
+margin_right = 51.0
+margin_bottom = 15.0
+rect_min_size = Vector2( 0, 15 )
+text = "000c"
+valign = 2
+
+[node name="Player_2" type="HBoxContainer" parent="GUIController/Margin/TopGUI"]
+margin_left = 519.0
+margin_right = 620.0
+margin_bottom = 40.0
+size_flags_horizontal = 10
+custom_constants/separation = 10
+
+[node name="Stats" type="VBoxContainer" parent="GUIController/Margin/TopGUI/Player_2"]
+margin_top = 3.0
+margin_right = 51.0
+margin_bottom = 37.0
+size_flags_vertical = 4
+custom_constants/separation = 5
+
+[node name="Name" type="Label" parent="GUIController/Margin/TopGUI/Player_2/Stats"]
+margin_right = 51.0
+margin_bottom = 14.0
+text = "Player 2"
+align = 2
+
+[node name="CoinBox" type="HBoxContainer" parent="GUIController/Margin/TopGUI/Player_2/Stats"]
+margin_top = 19.0
+margin_right = 51.0
+margin_bottom = 34.0
+custom_constants/separation = 5
+
+[node name="Coins" type="Label" parent="GUIController/Margin/TopGUI/Player_2/Stats/CoinBox"]
+margin_right = 31.0
+margin_bottom = 15.0
+rect_min_size = Vector2( 0, 15 )
+text = "000c"
+valign = 2
+
+[node name="Icon" type="ColorRect" parent="GUIController/Margin/TopGUI/Player_2/Stats/CoinBox"]
+margin_left = 36.0
+margin_right = 51.0
+margin_bottom = 15.0
+rect_min_size = Vector2( 15, 15 )
+color = Color( 0.937255, 0.0666667, 0.0666667, 1 )
+
+[node name="Icon" type="ColorRect" parent="GUIController/Margin/TopGUI/Player_2"]
+margin_left = 61.0
+margin_right = 101.0
+margin_bottom = 40.0
+rect_min_size = Vector2( 40, 40 )
+color = Color( 0.815686, 0.4, 0.333333, 1 )
 
 [connection signal="player_connected" from="InputController" to="." method="_on_InputController_player_connected"]
 [connection signal="player_disconnected" from="InputController" to="." method="_on_InputController_player_disconnected"]

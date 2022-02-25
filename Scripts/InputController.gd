@@ -9,8 +9,8 @@ signal player_switch(controller)
 
 func _ready() -> void:
 	for i in range(2):
-		var new_player = find_node("PlayerController" + str(i + 1))
-		controllers.append(new_player)
+		var new_player_controller = find_node("PlayerController" + str(i + 1))
+		controllers.append(new_player_controller)
 
 
 func _process(_delta: float) -> void:
@@ -45,7 +45,20 @@ func check_player_switch() -> void:
 			if not is_coop():
 				print("Switching " + controller.name + "...")
 				controller.player = null
-				emit_signal("player_switch", controller)
+				emit_signal("player_switch", controller, get_other_controller(controller))
+
+
+func get_other_controller(controller: Node) -> Node:
+	var other_controller : Node
+	
+	match controller.name:
+		"PlayerController1":
+			other_controller = controllers[1]
+		
+		"PlayerController2":
+			other_controller = controllers[0]
+	
+	return other_controller
 
 
 func is_coop() -> bool:
