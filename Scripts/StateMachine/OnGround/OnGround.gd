@@ -6,7 +6,6 @@ var gravity : float = 200.0
 
 func handle_input(host: Node):
 	if player_controller.get_jump():
-		print("Jump!")
 		emit_signal("finished", "Jump")
 	return .handle_input(host)
 

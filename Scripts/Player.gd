@@ -1,6 +1,7 @@
 extends KinematicBody
 
 onready var sprite : Sprite3D = $Sprite
+onready var raycast : RayCast = $RayCast
 onready var state_machine : Node = $StateMachine
 onready var input_controller : Node
 

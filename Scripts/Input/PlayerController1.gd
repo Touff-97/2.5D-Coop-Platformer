@@ -27,8 +27,10 @@ func get_direction() -> float:
 	if player:
 		if direction > 0:
 			player.sprite.flip_h = false
+			player.raycast.cast_to = (Vector3.RIGHT * 0.2)
 		elif direction < 0:
 			player.sprite.flip_h = true
+			player.raycast.cast_to = (Vector3.LEFT * 0.2)
 	
 	return direction
 

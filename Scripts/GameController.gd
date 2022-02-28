@@ -90,5 +90,5 @@ func _on_InputController_player_switch(controller: Node, other_controller: Node)
 
 # GUI Controller
 func _on_GUIController_coin_collected(coin_value: float, coin_color: Color, player: String) -> void:
-	print("Adding " + str(coin_value) + " to " + player)
+	print("Adding " + str(coin_value) + "c to " + player)
 	gui_controller.collect_coin(coin_value, coin_color, player)
