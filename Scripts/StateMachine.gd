@@ -68,7 +68,6 @@ func change_state(state_name: String) -> void:
 		# Transition into the next state
 		current_state = state_map[state_name]
 		current_state.enter(self)
-		print(current_state)
 	else:
 		push_error("StateMachine does not contain state " + state_name)
 

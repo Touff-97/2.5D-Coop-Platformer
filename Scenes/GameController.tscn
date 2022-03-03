@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=2]
+[gd_scene load_steps=17 format=2]
 
 [ext_resource path="res://Scripts/GameController.gd" type="Script" id=1]
 [ext_resource path="res://Scripts/Input/PlayerController1.gd" type="Script" id=2]
@@ -9,6 +9,8 @@
 [ext_resource path="res://Scenes/Block.tscn" type="PackedScene" id=7]
 [ext_resource path="res://Scripts/GUIController.gd" type="Script" id=8]
 [ext_resource path="res://Scenes/Collectibles/Coin.tscn" type="PackedScene" id=9]
+[ext_resource path="res://Scenes/Collectibles/Token.tscn" type="PackedScene" id=10]
+[ext_resource path="res://Scenes/Collectibles/PaperBoat.tscn" type="PackedScene" id=11]
 
 [sub_resource type="Environment" id=1]
 ambient_light_color = Color( 1, 1, 1, 1 )
@@ -79,83 +81,90 @@ depth = 10.0
 material = SubResource( 2 )
 
 [node name="Block2" parent="LevelController/Floor" instance=ExtResource( 7 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 4.51056, 0, 0 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 5.3787, 0, 0 )
 
 [node name="CollisionShape" parent="LevelController/Floor/Block2" index="0"]
 shape = SubResource( 3 )
 
 [node name="PhysicalShape" parent="LevelController/Floor/Block2" index="1"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00199652, 0.00762153, -0.003654 )
 width = 0.5
 height = 20.0
 depth = 10.0
 material = SubResource( 4 )
 
 [node name="Block3" parent="LevelController/Floor" instance=ExtResource( 7 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -6.04269, 0, 0 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -5.17455, 0, 0 )
 
 [node name="CollisionShape" parent="LevelController/Floor/Block3" index="0"]
 shape = SubResource( 3 )
 
 [node name="PhysicalShape" parent="LevelController/Floor/Block3" index="1"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00199652, 0.00762153, -0.003654 )
 width = 0.5
 height = 20.0
 depth = 10.0
 material = SubResource( 5 )
 
-[node name="Coins" type="Node" parent="LevelController"]
+[node name="Collectibles" type="Node" parent="LevelController"]
 
-[node name="Coin" parent="LevelController/Coins" instance=ExtResource( 9 )]
-transform = Transform( 0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 0.163534, 0 )
+[node name="Coins" type="Node" parent="LevelController/Collectibles"]
 
-[node name="Coin2" parent="LevelController/Coins" instance=ExtResource( 9 )]
-transform = Transform( 0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 1.22406, 0.163534, 0 )
+[node name="Coin" parent="LevelController/Collectibles/Coins" instance=ExtResource( 9 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.2186, 0 )
+
+[node name="Coin2" parent="LevelController/Collectibles/Coins" instance=ExtResource( 9 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -1.38939, 0.2186, 0 )
 coin_value = 400.0
 
-[node name="Coin3" parent="LevelController/Coins" instance=ExtResource( 9 )]
-transform = Transform( 0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 2.018, 0.163534, 0 )
+[node name="Coin3" parent="LevelController/Collectibles/Coins" instance=ExtResource( 9 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -2.22821, 0.2186, 0 )
 
-[node name="Coin4" parent="LevelController/Coins" instance=ExtResource( 9 )]
-transform = Transform( 0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 2.66755, 0.163534, 0 )
+[node name="Coin4" parent="LevelController/Collectibles/Coins" instance=ExtResource( 9 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -3.11137, 0.2186, 0 )
 
-[node name="Coin5" parent="LevelController/Coins" instance=ExtResource( 9 )]
-transform = Transform( 0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 3.23965, 0.163534, 0 )
-
-[node name="Coin6" parent="LevelController/Coins" instance=ExtResource( 9 )]
-transform = Transform( 0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, -1.2816, 0.163534, 0 )
-coin_value = 400.0
-
-[node name="Coin7" parent="LevelController/Coins" instance=ExtResource( 9 )]
-transform = Transform( 0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, -2.0558, 0.163534, 0 )
-
-[node name="Coin8" parent="LevelController/Coins" instance=ExtResource( 9 )]
-transform = Transform( 0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, -2.85585, 0.163534, 0 )
+[node name="Coin5" parent="LevelController/Collectibles/Coins" instance=ExtResource( 9 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1.38366, 0.2186, 0 )
 coin_value = 600.0
 
-[node name="Coin9" parent="LevelController/Coins" instance=ExtResource( 9 )]
-transform = Transform( 0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, -3.57243, 0.163534, 0 )
+[node name="Coin6" parent="LevelController/Collectibles/Coins" instance=ExtResource( 9 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 2.23451, 0.2186, 0 )
 
-[node name="Coin10" parent="LevelController/Coins" instance=ExtResource( 9 )]
-transform = Transform( 0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, -4.33915, 0.163534, 0 )
+[node name="Coin7" parent="LevelController/Collectibles/Coins" instance=ExtResource( 9 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 3.23971, 0.2186, 0 )
+coin_value = 800.0
+
+[node name="Coin8" parent="LevelController/Collectibles/Coins" instance=ExtResource( 9 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 2.72749, 0.561327, 0 )
 coin_value = 1000.0
 
-[node name="Coin11" parent="LevelController/Coins" instance=ExtResource( 9 )]
-transform = Transform( 0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, -4.98512, 0.163534, 0 )
+[node name="Coin9" parent="LevelController/Collectibles/Coins" instance=ExtResource( 9 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1.78843, 0.561327, 0 )
 
-[node name="Coin12" parent="LevelController/Coins" instance=ExtResource( 9 )]
-transform = Transform( 0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, -4.64391, 0.441003, 0 )
+[node name="Coin10" parent="LevelController/Collectibles/Coins" instance=ExtResource( 9 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -1.75558, 0.561327, 0 )
 
-[node name="Coin13" parent="LevelController/Coins" instance=ExtResource( 9 )]
-transform = Transform( 0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, -3.20907, 0.441003, 0 )
-
-[node name="Coin14" parent="LevelController/Coins" instance=ExtResource( 9 )]
-transform = Transform( 0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, -1.67092, 0.441003, 0 )
-
-[node name="Coin15" parent="LevelController/Coins" instance=ExtResource( 9 )]
-transform = Transform( 0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 1.65251, 0.441003, 0 )
+[node name="Coin11" parent="LevelController/Collectibles/Coins" instance=ExtResource( 9 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -2.57964, 0.561327, 0 )
 coin_value = 400.0
 
-[node name="Coin16" parent="LevelController/Coins" instance=ExtResource( 9 )]
-transform = Transform( 0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 2.94504, 0.441003, 0 )
+[node name="Tokens" type="Node" parent="LevelController/Collectibles"]
+
+[node name="Token" parent="LevelController/Collectibles/Tokens" instance=ExtResource( 10 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.725172, 0 )
+
+[node name="Token2" parent="LevelController/Collectibles/Tokens" instance=ExtResource( 10 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -1.07467, 0.725172, 0 )
+
+[node name="Token3" parent="LevelController/Collectibles/Tokens" instance=ExtResource( 10 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1.07737, 0.725172, 0 )
+
+[node name="PaperBoats" type="Node" parent="LevelController/Collectibles"]
+
+[node name="PaperBoat" parent="LevelController/Collectibles/PaperBoats" instance=ExtResource( 11 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 4.02076, 0.23869, 0 )
+
+[node name="MonumentPieces" type="Node" parent="LevelController/Collectibles"]
 
 [node name="GUIController" type="CanvasLayer" parent="."]
 script = ExtResource( 8 )

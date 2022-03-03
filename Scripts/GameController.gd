@@ -11,13 +11,8 @@ func _ready() -> void:
 	for i in range(max_player_count):
 		var new_player = find_node("Player_" + str(i + 1))
 		players.append(new_player)
-	# Get nodes in groups and connect their signals
-	# Coins
-	var coins = get_tree().get_nodes_in_group("Coin")
-	for coin in coins:
-		coin.connect("coin_collected", self, "_on_GUIController_coin_collected")
-		gui_controller.total_amount_coins += 1
-		gui_controller.load_total_coins()
+	# Load collectibles
+	load_collectibles()
 
 
 func _on_Player_1_player_ready() -> void:
@@ -32,6 +27,27 @@ func _on_Player_2_player_ready() -> void:
 	yield(get_tree(), "idle_frame")
 	for node in dep_nodes:
 		node.player_2 = players[1]
+
+
+func load_collectibles() -> void:
+	# Get nodes in groups and connect their signals
+	# Coins
+	var coins = get_tree().get_nodes_in_group("Coin")
+	for coin in coins:
+		coin.connect("_on_collected", self, "_on_GUIController_collectible_collected")
+		gui_controller.total_amount_coins += 1 # Adds 1 to the total pool of coins in a level
+	# Tokens
+	var tokens = get_tree().get_nodes_in_group("Token")
+	for token in tokens:
+		token.connect("_on_collected", self, "_on_GUIController_collectible_collected")
+		gui_controller.total_amount_tokens += 1 # Adds 1 to the total pool of tokens in a level
+	# Paper Boats
+	var boats = get_tree().get_nodes_in_group("PaperBoat")
+	for boat in boats:
+		boat.connect("_on_collected", self, "_on_GUIController_collectible_collected")
+		gui_controller.total_amount_boats += 1 # Adds 1 to the total pool of paper boats in a level
+	
+	gui_controller.load_total_colectibles()
 
 
 # Input Controller
@@ -89,6 +105,6 @@ func _on_InputController_player_switch(controller: Node, other_controller: Node)
 
 
 # GUI Controller
-func _on_GUIController_coin_collected(coin_value: float, coin_color: Color, player: String) -> void:
-	print("Adding " + str(coin_value) + "c to " + player)
-	gui_controller.collect_coin(coin_value, coin_color, player)
+func _on_GUIController_collectible_collected(player: String, collectible: String, value: float, color: Color = Color.white) -> void:
+	print("Adding " + str(value) + "c to " + player)
+	gui_controller.collect_collectible(player, collectible, value, color)
