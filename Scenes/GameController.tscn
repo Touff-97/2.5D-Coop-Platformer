@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=2]
+[gd_scene load_steps=18 format=2]
 
 [ext_resource path="res://Scripts/GameController.gd" type="Script" id=1]
 [ext_resource path="res://Scripts/Input/PlayerController1.gd" type="Script" id=2]
@@ -11,6 +11,7 @@
 [ext_resource path="res://Scenes/Collectibles/Coin.tscn" type="PackedScene" id=9]
 [ext_resource path="res://Scenes/Collectibles/Token.tscn" type="PackedScene" id=10]
 [ext_resource path="res://Scenes/Collectibles/PaperBoat.tscn" type="PackedScene" id=11]
+[ext_resource path="res://Scenes/Platform.tscn" type="PackedScene" id=12]
 
 [sub_resource type="Environment" id=1]
 ambient_light_color = Color( 1, 1, 1, 1 )
@@ -129,6 +130,17 @@ width = 0.5
 height = 20.0
 depth = 10.0
 material = SubResource( 5 )
+
+[node name="Platforms" type="Node" parent="LevelController"]
+
+[node name="Platform" parent="LevelController/Platforms" instance=ExtResource( 12 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -3, 4, 0 )
+is_vertical = true
+translation_offset = 4.0
+
+[node name="Platform2" parent="LevelController/Platforms" instance=ExtResource( 12 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 2.70579, 1.10092, 0 )
+translation_offset = 1.0
 
 [node name="Collectibles" type="Node" parent="LevelController"]
 
