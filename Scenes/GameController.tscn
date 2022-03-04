@@ -95,7 +95,7 @@ depth = 10.0
 material = SubResource( 4 )
 
 [node name="Block4" parent="LevelController/Floor" instance=ExtResource( 7 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.422037, 10.0614, 0 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.422037, 10.3224, 0 )
 
 [node name="CollisionShape" parent="LevelController/Floor/Block4" index="0"]
 shape = SubResource( 3 )
@@ -137,10 +137,13 @@ material = SubResource( 5 )
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -3, 4, 0 )
 is_vertical = true
 translation_offset = 4.0
+animation_time = 6.0
 
 [node name="Platform2" parent="LevelController/Platforms" instance=ExtResource( 12 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 2.70579, 1.10092, 0 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 3.06431, 1.10092, 0 )
 translation_offset = 1.0
+animation_time = 4.0
+time_offset = 2.0
 
 [node name="Collectibles" type="Node" parent="LevelController"]
 
@@ -212,17 +215,16 @@ custom_constants/margin_right = 10
 custom_constants/margin_top = 10
 custom_constants/margin_left = 10
 custom_constants/margin_bottom = 10
-__meta__ = {
-"_edit_use_anchors_": false
-}
 
 [node name="TopGUI" type="HBoxContainer" parent="GUIController/Margin"]
 margin_left = 10.0
 margin_top = 10.0
 margin_right = 630.0
 margin_bottom = 50.0
+grow_horizontal = 0
+grow_vertical = 0
 size_flags_vertical = 0
-custom_constants/separation = 108
+custom_constants/separation = 100
 
 [node name="Player_1" type="HBoxContainer" parent="GUIController/Margin/TopGUI"]
 margin_right = 101.0
@@ -267,16 +269,6 @@ margin_bottom = 15.0
 rect_min_size = Vector2( 0, 15 )
 text = "000c"
 valign = 2
-
-[node name="ProgressCoins" type="ProgressBar" parent="GUIController/Margin/TopGUI"]
-margin_left = 209.0
-margin_top = 26.0
-margin_right = 409.0
-margin_bottom = 40.0
-rect_min_size = Vector2( 200, 0 )
-size_flags_horizontal = 3
-size_flags_vertical = 8
-step = 1.0
 
 [node name="Player_2" type="HBoxContainer" parent="GUIController/Margin/TopGUI"]
 margin_left = 519.0
@@ -324,6 +316,22 @@ margin_right = 101.0
 margin_bottom = 40.0
 rect_min_size = Vector2( 40, 40 )
 color = Color( 0.815686, 0.4, 0.333333, 1 )
+
+[node name="CollectibleUI" type="MarginContainer" parent="GUIController/Margin"]
+margin_left = 10.0
+margin_top = 10.0
+margin_right = 630.0
+margin_bottom = 350.0
+custom_constants/margin_top = 25
+
+[node name="ProgressCoins" type="ProgressBar" parent="GUIController/Margin/CollectibleUI"]
+margin_left = 235.0
+margin_top = 25.0
+margin_right = 385.0
+margin_bottom = 39.0
+rect_min_size = Vector2( 150, 0 )
+size_flags_horizontal = 6
+step = 1.0
 
 [connection signal="player_connected" from="InputController" to="." method="_on_InputController_player_connected"]
 [connection signal="player_disconnected" from="InputController" to="." method="_on_InputController_player_disconnected"]

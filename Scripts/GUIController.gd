@@ -9,7 +9,7 @@ onready var player_1_coins : Label = $Margin/TopGUI/Player_1/Stats/CoinBox/Coins
 onready var player_1_coin_icon : ColorRect = $Margin/TopGUI/Player_1/Stats/CoinBox/Icon
 onready var player_2_coins : Label = $Margin/TopGUI/Player_2/Stats/CoinBox/Coins
 onready var player_2_coin_icon : ColorRect = $Margin/TopGUI/Player_2/Stats/CoinBox/Icon
-onready var progress_coins : ProgressBar = $Margin/TopGUI/ProgressCoins
+onready var progress_coins : ProgressBar = $Margin/CollectibleUI/ProgressCoins
 # Tokens
 export(float) onready var tokens_collected = 0.0
 onready var total_amount_tokens : float = 0.0
