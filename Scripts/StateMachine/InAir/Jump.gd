@@ -41,6 +41,10 @@ func update(host: Node, delta: float) -> void:
 		emit_signal("finished", "Walk")
 	else:
 		coyote_time()
+	
+	if is_on_wall(host):
+		if host.kinematic_body.name == "Player_2":
+			emit_signal("finished", "WallSlide")
 
 
 # Helper functions
@@ -50,6 +54,10 @@ func get_gravity(host: Node) -> float:
 
 func is_grounded(host: Node) -> bool:
 	return host.kinematic_body.is_on_floor()
+
+
+func is_on_wall(host: Node) -> bool:
+	return host.kinematic_body.is_on_wall()
 
 
 func coyote_time() -> void:

@@ -1,5 +1,5 @@
 extends Node
-class_name StateMachine
+class_name StateMachine, "res://Assets/Icons/state_machine.png"
 
 export(NodePath) onready var default_state = get_node(default_state)
 export(NodePath) onready var kinematic_body = get_node(kinematic_body)
@@ -29,6 +29,12 @@ func _start() -> void:
 	state_stack.push_front(state_map[default_state.name])
 	current_state = state_stack[0]
 	change_state(default_state.name)
+	
+	if kinematic_body.is_on_wall():
+		change_state("WallSlide")
+	
+	if kinematic_body.is_on_floor():
+		change_state("Idle")
 
 
 func _stop() -> void:
@@ -68,6 +74,7 @@ func change_state(state_name: String) -> void:
 		# Transition into the next state
 		current_state = state_map[state_name]
 		current_state.enter(self)
+		print(current_state)
 	else:
 		push_error("StateMachine does not contain state " + state_name)
 

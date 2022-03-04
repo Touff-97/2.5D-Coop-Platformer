@@ -21,7 +21,7 @@ _global_script_classes=[ {
 } ]
 _global_script_class_icons={
 "State": "",
-"StateMachine": ""
+"StateMachine": "res://Assets/Icons/state_machine.png"
 }
 
 [application]

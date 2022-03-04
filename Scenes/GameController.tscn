@@ -19,7 +19,7 @@ ambient_light_color = Color( 1, 1, 1, 1 )
 albedo_color = Color( 0.219608, 0.219608, 0.219608, 1 )
 
 [sub_resource type="BoxShape" id=3]
-extents = Vector3( 0.25, 10, 5 )
+extents = Vector3( 0.25, 10, 1 )
 
 [sub_resource type="SpatialMaterial" id=4]
 albedo_color = Color( 0.486275, 0.486275, 0.486275, 1 )
@@ -93,6 +93,30 @@ height = 20.0
 depth = 10.0
 material = SubResource( 4 )
 
+[node name="Block4" parent="LevelController/Floor" instance=ExtResource( 7 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.422037, 10.0614, 0 )
+
+[node name="CollisionShape" parent="LevelController/Floor/Block4" index="0"]
+shape = SubResource( 3 )
+
+[node name="PhysicalShape" parent="LevelController/Floor/Block4" index="1"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00199652, 0.00762153, -0.003654 )
+width = 0.5
+height = 20.0
+material = SubResource( 4 )
+
+[node name="Block5" parent="LevelController/Floor" instance=ExtResource( 7 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.578466, 10.5589, 0 )
+
+[node name="CollisionShape" parent="LevelController/Floor/Block5" index="0"]
+shape = SubResource( 3 )
+
+[node name="PhysicalShape" parent="LevelController/Floor/Block5" index="1"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00199652, 0.00762153, -0.003654 )
+width = 0.5
+height = 20.0
+material = SubResource( 4 )
+
 [node name="Block3" parent="LevelController/Floor" instance=ExtResource( 7 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -5.17455, 0, 0 )
 
@@ -154,10 +178,10 @@ coin_value = 400.0
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.725172, 0 )
 
 [node name="Token2" parent="LevelController/Collectibles/Tokens" instance=ExtResource( 10 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -1.07467, 0.725172, 0 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4.16627, 0 )
 
 [node name="Token3" parent="LevelController/Collectibles/Tokens" instance=ExtResource( 10 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1.07737, 0.725172, 0 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.55627, 0 )
 
 [node name="PaperBoats" type="Node" parent="LevelController/Collectibles"]
 
@@ -299,4 +323,6 @@ color = Color( 0.815686, 0.4, 0.333333, 1 )
 [editable path="LevelController/Player_2"]
 [editable path="LevelController/Floor/Block"]
 [editable path="LevelController/Floor/Block2"]
+[editable path="LevelController/Floor/Block4"]
+[editable path="LevelController/Floor/Block5"]
 [editable path="LevelController/Floor/Block3"]

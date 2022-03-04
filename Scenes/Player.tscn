@@ -26,11 +26,6 @@ texture = ExtResource( 2 )
 transform = Transform( 1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, -0.000912368, -0.0209625, 0.000864238 )
 shape = SubResource( 1 )
 
-[node name="RayCast" type="RayCast" parent="."]
-transform = Transform( 1, 2.35559e-09, 0, 2.20098e-10, 1, 6.98492e-10, 0, 0, 1, -0.000303961, 0.0610647, 0.000170906 )
-enabled = true
-cast_to = Vector3( 0.2, 0, 0 )
-
 [node name="StateMachine" type="Node" parent="."]
 script = ExtResource( 3 )
 default_state = NodePath("Idle")

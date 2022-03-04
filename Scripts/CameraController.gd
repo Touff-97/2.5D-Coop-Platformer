@@ -35,6 +35,12 @@ func _process(delta: float) -> void:
 									 (abs(player_1.translation.x - player_2.translation.x) * 5) * delta), \
 								camera_zoom_min, \
 								camera_zoom_max)
+		elif abs(player_1.translation.y - player_2.translation.y) > camera_zoom_min:
+			camera_zoom = clamp(lerp(camera_zoom_min, \
+									 camera_zoom_max, \
+									 (abs(player_1.translation.y - player_2.translation.y) * 5) * delta), \
+								camera_zoom_min, \
+								camera_zoom_max)
 		else:
 			camera_zoom = camera_zoom_min
 		
