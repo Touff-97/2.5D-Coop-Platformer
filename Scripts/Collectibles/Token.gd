@@ -1,3 +1,4 @@
+tool
 extends "res://Scripts/Collectible.gd"
 
 export(float) var token_value = 2500

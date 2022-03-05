@@ -1,3 +1,4 @@
+tool
 extends "res://Scripts/Collectible.gd"
 
 export(float) var boat_value = 5000

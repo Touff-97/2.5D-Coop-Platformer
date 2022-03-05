@@ -1,3 +1,4 @@
+tool
 extends "res://Scripts/Collectible.gd"
 
 export(float, EXP, 200, 1000, 200) var coin_value = 200

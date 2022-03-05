@@ -1,3 +1,4 @@
+tool
 extends StaticBody
 
 onready var platform_position : Vector3 = translation
