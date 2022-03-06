@@ -45,7 +45,7 @@ script = ExtResource( 3 )
 script = ExtResource( 6 )
 
 [node name="Camera" type="Camera" parent="CameraController"]
-transform = Transform( 1, 0, 0, 0, 0.93159, 0.363511, 0, -0.363511, 0.93159, -0.15989, 0.81043, 1.75058 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 2 )
 environment = SubResource( 1 )
 current = true
 fov = 50.0
@@ -134,13 +134,13 @@ material = SubResource( 5 )
 [node name="Platforms" type="Node" parent="LevelController"]
 
 [node name="Platform" parent="LevelController/Platforms" instance=ExtResource( 12 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -3, 0.0798554, 0 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -3, -2.43131, 0 )
 is_vertical = true
 translation_offset = 4.0
 animation_time = 6.0
 
 [node name="Platform2" parent="LevelController/Platforms" instance=ExtResource( 12 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 2.68935, 1.10092, 0 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 2.24766, 1.10092, 0 )
 translation_offset = 1.0
 animation_time = 4.0
 time_offset = 2.0
@@ -150,69 +150,69 @@ time_offset = 2.0
 [node name="Coins" type="Node" parent="LevelController/Collectibles"]
 
 [node name="Coin" parent="LevelController/Collectibles/Coins" instance=ExtResource( 9 )]
-transform = Transform( -0.921459, 0, -0.388475, 0, 1, 0, 0.388475, 0, -0.921459, 0, 0.136026, 0 )
+transform = Transform( -0.889782, 0, 0.456386, 0, 1, 0, -0.456386, 0, -0.889782, 0, 0.108241, 0 )
 modulate = Color( 1, 0, 0, 1 )
 
 [node name="Coin2" parent="LevelController/Collectibles/Coins" instance=ExtResource( 9 )]
-transform = Transform( -0.921459, 0, -0.388475, 0, 1, 0, 0.388475, 0, -0.921459, -1.38939, 0.136026, 0 )
+transform = Transform( -0.889782, 0, 0.456386, 0, 1, 0, -0.456386, 0, -0.889782, -1.38939, 0.108241, 0 )
 modulate = Color( 1, 0.65, 0, 1 )
 coin_value = 400.0
 
 [node name="Coin3" parent="LevelController/Collectibles/Coins" instance=ExtResource( 9 )]
-transform = Transform( -0.921459, 0, -0.388475, 0, 1, 0, 0.388475, 0, -0.921459, -2.22821, 0.136026, 0 )
+transform = Transform( -0.889782, 0, 0.456386, 0, 1, 0, -0.456386, 0, -0.889782, -2.22821, 0.108241, 0 )
 modulate = Color( 1, 0, 0, 1 )
 
 [node name="Coin4" parent="LevelController/Collectibles/Coins" instance=ExtResource( 9 )]
-transform = Transform( -0.921459, 0, -0.388475, 0, 1, 0, 0.388475, 0, -0.921459, -3.11137, 0.136026, 0 )
+transform = Transform( -0.889782, 0, 0.456386, 0, 1, 0, -0.456386, 0, -0.889782, -3.11137, 0.108241, 0 )
 modulate = Color( 1, 0, 0, 1 )
 
 [node name="Coin5" parent="LevelController/Collectibles/Coins" instance=ExtResource( 9 )]
-transform = Transform( -0.921459, 0, -0.388475, 0, 1, 0, 0.388475, 0, -0.921459, 1.38366, 0.136026, 0 )
+transform = Transform( -0.889782, 0, 0.456386, 0, 1, 0, -0.456386, 0, -0.889782, 1.38366, 0.108241, 0 )
 modulate = Color( 1, 1, 0, 1 )
 coin_value = 600.0
 
 [node name="Coin6" parent="LevelController/Collectibles/Coins" instance=ExtResource( 9 )]
-transform = Transform( -0.921459, 0, -0.388475, 0, 1, 0, 0.388475, 0, -0.921459, 2.23451, 0.136026, 0 )
+transform = Transform( -0.889782, 0, 0.456386, 0, 1, 0, -0.456386, 0, -0.889782, 2.23451, 0.108241, 0 )
 modulate = Color( 1, 0, 0, 1 )
 
 [node name="Coin7" parent="LevelController/Collectibles/Coins" instance=ExtResource( 9 )]
-transform = Transform( -0.921459, 0, -0.388475, 0, 1, 0, 0.388475, 0, -0.921459, 3.23971, 0.136026, 0 )
+transform = Transform( -0.889782, 0, 0.456386, 0, 1, 0, -0.456386, 0, -0.889782, 3.23971, 0.108241, 0 )
 modulate = Color( 0, 1, 0, 1 )
 coin_value = 800.0
 
 [node name="Coin8" parent="LevelController/Collectibles/Coins" instance=ExtResource( 9 )]
-transform = Transform( -0.921459, 0, -0.388475, 0, 1, 0, 0.388475, 0, -0.921459, 2.72749, 0.478753, 0 )
+transform = Transform( -0.889782, 0, 0.456386, 0, 1, 0, -0.456386, 0, -0.889782, 2.72749, 0.450968, 0 )
 modulate = Color( 0, 0, 1, 1 )
 coin_value = 1000.0
 
 [node name="Coin9" parent="LevelController/Collectibles/Coins" instance=ExtResource( 9 )]
-transform = Transform( -0.921459, 0, -0.388475, 0, 1, 0, 0.388475, 0, -0.921459, 1.78843, 0.478753, 0 )
+transform = Transform( -0.889782, 0, 0.456386, 0, 1, 0, -0.456386, 0, -0.889782, 1.78843, 0.450968, 0 )
 modulate = Color( 1, 0, 0, 1 )
 
 [node name="Coin10" parent="LevelController/Collectibles/Coins" instance=ExtResource( 9 )]
-transform = Transform( -0.921459, 0, -0.388475, 0, 1, 0, 0.388475, 0, -0.921459, -1.75558, 0.478753, 0 )
+transform = Transform( -0.889782, 0, 0.456386, 0, 1, 0, -0.456386, 0, -0.889782, -1.75558, 0.450968, 0 )
 modulate = Color( 1, 0, 0, 1 )
 
 [node name="Coin11" parent="LevelController/Collectibles/Coins" instance=ExtResource( 9 )]
-transform = Transform( -0.921459, 0, -0.388475, 0, 1, 0, 0.388475, 0, -0.921459, -2.57964, 0.478753, 0 )
+transform = Transform( -0.889782, 0, 0.456386, 0, 1, 0, -0.456386, 0, -0.889782, -2.57964, 0.450968, 0 )
 modulate = Color( 1, 0.65, 0, 1 )
 coin_value = 400.0
 
 [node name="Tokens" type="Node" parent="LevelController/Collectibles"]
 
 [node name="Token" parent="LevelController/Collectibles/Tokens" instance=ExtResource( 10 )]
-transform = Transform( -0.0741808, 0, -0.997245, 0, 1, 0, 0.997245, 0, -0.0741808, 0, 0.677535, 0 )
+transform = Transform( -0.811757, 0, -0.583996, 0, 1, 0, 0.583996, 0, -0.811757, 0, 0.64975, 0 )
 
 [node name="Token2" parent="LevelController/Collectibles/Tokens" instance=ExtResource( 10 )]
-transform = Transform( -0.0741808, 0, -0.997245, 0, 1, 0, 0.997245, 0, -0.0741808, 0, 4.11863, 0 )
+transform = Transform( -0.811757, 0, -0.583996, 0, 1, 0, 0.583996, 0, -0.811757, 0, 4.09084, 0 )
 
 [node name="Token3" parent="LevelController/Collectibles/Tokens" instance=ExtResource( 10 )]
-transform = Transform( -0.0741808, 0, -0.997245, 0, 1, 0, 0.997245, 0, -0.0741808, 0, 2.50863, 0 )
+transform = Transform( -0.811757, 0, -0.583996, 0, 1, 0, 0.583996, 0, -0.811757, 0, 2.48084, 0 )
 
 [node name="PaperBoats" type="Node" parent="LevelController/Collectibles"]
 
 [node name="PaperBoat" parent="LevelController/Collectibles/PaperBoats" instance=ExtResource( 11 )]
-transform = Transform( -0.0741808, 0, -0.997245, 0, 1, 0, 0.997245, 0, -0.0741808, 4.02076, 0.191053, 0 )
+transform = Transform( -0.811757, 0, -0.583996, 0, 1, 0, 0.583996, 0, -0.811757, 4.02076, 0.163268, 0 )
 
 [node name="MonumentPieces" type="Node" parent="LevelController/Collectibles"]
 

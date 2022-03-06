@@ -10,7 +10,7 @@ func _ready() -> void:
 
 
 func _on_collectibleArea_body_entered(body: Node) -> void:
-	if body:
+	if body is KinematicBody:
 		var player = body.input_controller.name
 		print(player + " collected a " + str(boat_value) + "c paper boat!")
 		
